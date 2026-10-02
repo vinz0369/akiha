@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# Next.js
+/.next/
+/out/
+/.vercel/
+
+# tests
+/coverage/
+/playwright-report/
+/test-results/
+/.tmp/
+
+# local environment and Supabase runtime
+.env*
+!.env.example
+/supabase/.branches/
+/supabase/.temp/
+
+# OS/editor
+.agents/
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
+
+# Private source photos stay local; only the optimized authenticated asset is shipped.
+/couple_pic.jpg

@@ -1,0 +1,47 @@
+{
+  "name": "akiha",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:edge": "npx -y deno check --config supabase/functions/send-reminder/deno.json supabase/functions/send-reminder/index.ts && npx -y deno check --config supabase/functions/send-encouragement/deno.json supabase/functions/send-encouragement/index.ts && npx -y deno check --config supabase/functions/send-moment-notification/deno.json supabase/functions/send-moment-notification/index.ts",
+    "test:db:rls": "node tests/database/run-sql.mjs tests/database/rls.sql",
+    "test:db:concurrency": "node tests/database/concurrency.mjs",
+    "test:db": "npx supabase db lint --local --level error && npm run test:db:rls && npm run test:db:concurrency",
+    "test:storage": "node --env-file-if-exists=.env.local tests/database/storage.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run lint && npm run typecheck && npm run test"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.5",
+    "@supabase/supabase-js": "2.112.4",
+    "fflate": "0.8.3",
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@types/node": "24.10.13",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.1",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.3.8",
+    "jsdom": "28.0.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}
