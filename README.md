@@ -31,13 +31,6 @@ npx supabase db reset
 npm run dev
 ```
 
-Tài khoản seed local:
-
-- `thu@akiha.local` / `akiha-local-user`
-- `vinh@akiha.local` / `akiha-local-admin`
-
-Tên mật khẩu cũ được giữ để không phá môi trường local; trong sản phẩm hai tài khoản không còn quan hệ user/admin.
-
 ## Kiểm tra
 
 ```powershell
